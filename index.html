@@ -2,215 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Jayden’s Superhero Birthday Bash — RSVP</title>
-<meta name="description" content="Join us for a superhero-themed birthday party bursting with comic action, animations, and fun! RSVP now." />
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Solaria Roof — High‑Efficiency Solar for Modern Homes</title>
+<meta name="description" content="Interactive solar landing page with scroll‑driven storytelling, performance metrics, and a frictionless quote form." />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='50%25' cy='50%25' r='50%25'%3E%3Cstop offset='0' stop-color='%23ffd36e'/%3E%3Cstop offset='1' stop-color='%23ff9f1a'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='28' fill='url(%23g)'/%3E%3C/svg%3E" />
 <style>
   :root{
-    --bg:#0e0f1a; --ink:#f2f2f2; --muted:#d7d7d7; --b:#ffffff22;
-    --c1:#ff4757; --c2:#1e90ff; --c3:#2ed573; --c4:#ffa502; --c5:#9b59b6;
+    --bg:#0a0d14; --ink:#e9eef6; --muted:#c3cad6; --b:#ffffff22;
+    --sun1:#ffd36e; --sun2:#ff9f1a; --sky1:#0f1b3a; --sky2:#0a0d14; --accent:#6ee7b7; --blue:#3aa0ff;
   }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;font-family:'Roboto',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
-  h1,h2,h3{font-family:'Bangers',cursive;letter-spacing:1px}
-  a{text-decoration:none;color:inherit}
-  .container{max-width:1160px;margin:0 auto;padding:20px}
+  *{box-sizing:border-box} html,body{height:100%}
+  body{margin:0; font-family:'Sora', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:linear-gradient(180deg,var(--sky1),var(--sky2)); color:var(--ink); overflow-x:hidden}
+  a{color:inherit; text-decoration:none}
+  .container{max-width:1160px; margin:0 auto; padding:0 20px}
 
-  /* HALFTONE BG OVERLAY */
-  .halftone{position:fixed;inset:-20vh -20vw;pointer-events:none;z-index:0;opacity:.12;
-    background-image: radial-gradient(#ffffff 1px, transparent 1px);
-    background-size: 6px 6px;mix-blend-mode:overlay;animation:slowPan 40s linear infinite}
-  @keyframes slowPan{to{transform:translate3d(60px,40px,0)}}
+  /* Header */
+  header{position:sticky; top:0; z-index:10; backdrop-filter:blur(8px); background:rgba(10,13,20,.55); border-bottom:1px solid var(--b)}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:12px 0}
+  .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:-.02em}
+  .sun{width:12px; height:12px; border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--sun1), var(--sun2))}
+  .nav a{padding:8px 10px; border-radius:10px; opacity:.92}
+  .nav a:hover{background:#ffffff12}
+  .cta{padding:10px 14px; border-radius:12px; border:0; background:linear-gradient(135deg,var(--sun1),var(--sun2)); color:#0a0d14; font-weight:800}
 
-  header{position:sticky;top:0;z-index:5;background:rgba(14,15,26,.75);backdrop-filter:blur(10px);border-bottom:3px solid var(--c2)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-  .brand{font-family:'Bangers';font-size:1.6rem;color:var(--c2);text-shadow:2px 2px 0 #000}
-  .nav a{padding:8px 12px;border-radius:6px;font-weight:700;color:#fff}
-  .nav a:hover{background:rgba(255,255,255,.12)}
-  .cta{background:linear-gradient(135deg,var(--c2),var(--c1));padding:10px 16px;border-radius:8px;color:#fff;box-shadow:0 6px 0 #0b4577}
+  /* Hero */
+  .hero{position:relative; min-height:96vh; display:grid; place-items:center; text-align:center; overflow:hidden}
+  .hero .wrap{position:relative; z-index:1; max-width:1000px; padding:70px 0 40px}
+  .eyebrow{display:inline-flex; gap:10px; align-items:center; padding:8px 12px; border:1px solid var(--b);
+           border-radius:999px; background:#ffffff12; color:#dfe7f5}
+  .title{margin:14px 0 10px; font-size:clamp(44px,8vw,96px); letter-spacing:-.02em; line-height:1.03; font-weight:800;
+    background:conic-gradient(from 0deg, var(--sun1), var(--accent), var(--blue), var(--sun2), var(--sun1));
+    -webkit-background-clip:text; background-clip:text; color:transparent; background-size:200% 200%; animation:shimmer 8s linear infinite}
+  .sub{max-width:860px; margin:0 auto 22px; color:var(--muted); font-size:clamp(16px,2vw,22px)}
+  .btn{display:inline-block; padding:14px 18px; font-weight:800; border-radius:14px; border:1px solid var(--b); background:#ffffff12; color:#f2f6ff}
+  .btn.pri{border:0; background:linear-gradient(135deg,var(--sun1),var(--sun2)); color:#0a0d14}
+  @keyframes shimmer{to{background-position:200% 50%}}
 
-  /* HERO */
-  .hero{position:relative;min-height:92vh;display:grid;place-items:center;text-align:center;
-    background:url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat}
-  .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,26,.7),rgba(14,15,26,.6))}
-  .hero .wrap{position:relative;z-index:1;padding:48px 20px}
-  h1{font-size:clamp(54px,10vw,120px);color:#fff;text-shadow:6px 6px 0 var(--c2), -2px -2px 0 var(--c4)}
-  .tag{display:inline-block;margin-bottom:10px;padding:10px 16px;background:#000;border:3px solid var(--c1);color:#fff;border-radius:8px;transform:skew(-6deg)}
-  .sub{font-size:clamp(16px,2vw,24px);max-width:720px;margin:10px auto 0;color:var(--ink)}
-  .btn{display:inline-block;margin-top:22px;padding:14px 22px;font-weight:800;border-radius:10px;background:var(--c3);color:#0e0f1a;transition:.2s;box-shadow:0 6px 0 #137a43}
-  .btn:hover{transform:translateY(-2px) scale(1.05);background:var(--c4);box-shadow:0 6px 0 #b36b00}
+  /* Sun + rays canvas layer */
+  #sunCanvas{position:absolute; inset:0; z-index:0}
 
-  /* FLYING SUPERHERO SVG */
-  .sky{position:absolute;inset:0;z-index:0}
-  .hero-ship{position:absolute;left:-30vw;top:20vh;width:min(38vw,420px);filter:drop-shadow(0 8px 16px rgba(0,0,0,.5));animation:flying 18s cubic-bezier(.36,.01,.18,1) infinite}
-  @keyframes flying{0%{transform:translateX(0) translateY(0) rotate(-6deg)}30%{transform:translateX(70vw) translateY(-10vh) rotate(3deg)}31%{opacity:0}60%{transform:translateX(-20vw) translateY(12vh) rotate(-8deg);opacity:0}61%{opacity:1}100%{transform:translateX(0) translateY(0) rotate(-6deg)}}
-
-  /* PANELS */
-  .panel{position:relative;z-index:1;padding:70px 0}
-  .head{text-align:center;margin-bottom:30px}
-
-  /* COMIC BURSTS (scroll-triggered) */
-  .burst{display:inline-block;padding:18px 28px;font-family:'Bangers';font-size:2rem;color:#fff;transform:scale(.6) rotate(-6deg);opacity:0;
-    clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
-    background:var(--c1);border:4px solid #000;text-shadow:2px 2px 0 #000;transition:transform .5s cubic-bezier(.2,.9,.2,1), opacity .5s}
-  .burst.blue{background:var(--c2)} .burst.green{background:var(--c3);color:#111} .burst.purple{background:var(--c5)}
-  .reveal.show .burst{opacity:1;transform:scale(1) rotate(0)}
-
-  /* CARDS */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-  .card{padding:20px;border-radius:14px;border:3px solid #000;background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.06));box-shadow:6px 6px 0 #000}
-  .card h3{color:var(--c1);margin:0 0 6px}
+  /* Pinned section */
+  section{position:relative}
+  .panel{padding:80px 0}
+  .head{text-align:center; margin-bottom:22px}
+  .head h2{margin:0 0 8px; font-size:clamp(28px,5vw,48px); letter-spacing:-.02em}
   .muted{color:var(--muted)}
 
-  /* GALLERY */
-  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
-  .gallery img{width:100%;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #000;box-shadow:4px 4px 0 #000;transition:.25s}
-  .gallery img:hover{transform:rotate(-1deg) scale(1.03)}
+  .pin-wrap{display:grid; grid-template-columns:1fr; gap:20px}
+  .pin-figure{position:relative; border:1px solid var(--b); border-radius:18px; overflow:hidden; background:#0c1224}
+  .pin-figure img{width:100%; height:100%; object-fit:cover; opacity:.92; filter:contrast(1.05) saturate(1.05)}
+  .pin-legend{position:absolute; left:16px; bottom:16px; background:#0009; border:1px solid var(--b); color:#fff; padding:8px 12px; border-radius:10px}
 
-  /* RSVP */
-  form{display:grid;gap:12px}
-  input,textarea{padding:12px;border-radius:8px;border:3px solid #000;background:#111;color:#fff}
-  label{font-weight:900;color:#fff;text-shadow:2px 2px 0 var(--c2)}
-  button{padding:14px 18px;background:var(--c1);border:3px solid #000;color:#fff;font-weight:900;border-radius:10px;cursor:pointer;box-shadow:4px 4px 0 #000}
-  button:hover{background:var(--c2)}
+  /* Feature cards */
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px}
+  .card{padding:18px; border:1px solid var(--b); border-radius:16px; background:linear-gradient(180deg,#ffffff12,#ffffff06)}
+  .card h3{margin:0 0 6px}
 
-  /* MODAL */
-  .modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:10}
-  .modal.open{display:flex}
-  .modal .box{max-width:560px;background:#fff;color:#111;border:4px solid #000;border-radius:14px;padding:24px;box-shadow:10px 10px 0 #000}
+  /* Metrics counters */
+  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px}
+  .metric{padding:18px; border:1px solid var(--b); border-radius:14px; text-align:center; background:#0e142a}
+  .metric .num{font-size:40px; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--sun1)); -webkit-background-clip:text; color:transparent}
 
-  footer{text-align:center;padding:28px;color:var(--muted)}
+  /* Showcase / gallery */
+  .gallery{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:10px}
+  .gallery img{width:100%; height:230px; object-fit:cover; border-radius:12px; border:1px solid var(--b)}
+
+  /* Quote form */
+  form{display:grid; gap:12px}
+  input,select,textarea{width:100%; padding:12px 14px; border-radius:12px; border:1px solid var(--b); background:#0e152e; color:#e9eef6}
+  label{font-size:14px; color:#dbe4f8}
+  button{padding:14px 18px; border-radius:12px; border:0; font-weight:800; background:linear-gradient(135deg,var(--sun1),var(--sun2)); color:#0a0d14}
+
+  /* Footer */
+  footer{margin:40px 0 70px; text-align:center; color:var(--muted)}
 
   /* Reduced motion */
   @media (prefers-reduced-motion: reduce){
-    .hero-ship{animation:none}
-    .halftone{animation:none}
+    #sunCanvas{display:none}
   }
 </style>
 </head>
 <body>
-<div class="halftone" aria-hidden="true"></div>
 <header>
   <div class="container nav">
-    <div class="brand">Jayden’s Super Bash</div>
-    <div>
-      <a href="#about">About</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#rsvp" class="cta">RSVP</a>
-    </div>
+    <div class="brand"><span class="sun"></span> Solaria Roof</div>
+    <nav>
+      <a href="#how">How it Works</a>
+      <a href="#tech">Technology</a>
+      <a href="#projects">Projects</a>
+      <a class="cta" href="#quote">Get a Quote</a>
+    </nav>
   </div>
 </header>
 
 <main>
-  <!-- HERO -->
+  <!-- HERO with animated sun/rays (canvas) -->
   <section class="hero" id="top">
-    <div class="overlay"></div>
-    <svg class="sky" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"></svg>
-    <svg class="hero-ship" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Simple flying superhero silhouette -->
-      <g fill="#fff">
-        <path d="M60 120c40-20 80-30 120-30 40 0 60 10 100 10 20 0 40-4 60 0 12 3 26 12 36 20-28 6-56 6-84 4-32-2-64-8-96-6-44 2-88 10-136 2z" opacity=".1"/>
-        <path d="M90 120c20-18 34-30 70-30 30 0 60 10 90 8 20-2 40-10 60-6 10 2 18 8 26 14-24 2-48 4-72 4-30 0-60-8-90-6-30 2-56 10-84 16z" fill="#1e90ff"/>
-        <!-- Cape -->
-        <path d="M150 110c-8 10-18 28-18 38 30-8 60-16 92-16-16-6-36-18-48-22-8-3-18-2-26 0z" fill="#ff4757"/>
-        <!-- Body -->
-        <rect x="180" y="92" width="28" height="18" rx="6" fill="#fff"/>
-        <circle cx="200" cy="88" r="8" fill="#fff"/>
-      </g>
-    </svg>
-    <div class="wrap">
-      <div class="tag">CALLING ALL HEROES!</div>
-      <h1>Jayden Turns 7!</h1>
-      <p class="sub">Saturday, June 15 • 2–5 PM • Community Center Gym — Dress as your favorite superhero and join the mission!</p>
-      <a class="btn" href="#rsvp" id="confettiBtn">Save Your Spot</a>
+    <canvas id="sunCanvas"></canvas>
+    <div class="wrap container">
+      <div class="eyebrow"><span class="sun"></span> 30% more energy from the same roof area</div>
+      <h1 class="title">Make your roof pay for itself</h1>
+      <p class="sub">Premium, low‑profile solar tiles engineered for high efficiency, rapid install, and powerful monitoring—all with a design that disappears into your roofline.</p>
+      <a class="btn pri" href="#quote">Get my savings estimate</a>
     </div>
   </section>
 
-  <!-- ABOUT with comic bursts -->
-  <section id="about" class="panel">
-    <div class="container">
-      <div class="head reveal"><span class="burst">POW!</span> <h2 style="display:inline-block;margin:0 10px">About the Party</h2> <span class="burst blue">BAM!</span>
-        <p>Training, games, and a heroic showdown to save the cake. Earn badges and take photos at the hero booth.</p>
-      </div>
-      <div class="cards reveal">
-        <div class="card"><h3>Mission HQ</h3><p class="muted">The gym becomes our secret base with stations for each power.</p></div>
-        <div class="card"><h3>Hero Training</h3><p class="muted">Obstacle course, shield toss, and trivia to level up.</p></div>
-        <div class="card"><h3>Villain Showdown</h3><p class="muted">Team up to defeat the surprise villain and unlock treats.</p></div>
-      </div>
+  <!-- PINNED STORY BLOCK: explainer stays while copy scrolls -->
+  <section class="panel" id="how">
+    <div class="container head">
+      <h2>How Solaria works</h2>
+      <p class="muted">From assessment to activation in three steps.</p>
     </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="panel">
-    <div class="container">
-      <div class="head reveal"><span class="burst purple">ZAP!</span> <h2 style="display:inline-block;margin:0 10px">Gallery</h2> <span class="burst green">WOW!</span>
-        <p>Colorful energy and happy chaos — a peek at the vibe.</p>
-      </div>
-      <div class="gallery reveal" id="gal">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" alt="Kids in costumes">
-        <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?q=80&w=800&auto=format&fit=crop" alt="Superhero masks">
-        <img src="https://images.unsplash.com/photo-1522770179533-24471fcdba45?q=80&w=800&auto=format&fit=crop" alt="Birthday cake">
-        <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=800&auto=format&fit=crop" alt="Party fun">
+    <div class="container pin-wrap">
+      <figure class="pin-figure" id="pinFigure">
+        <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop" alt="Solar panels on modern home"/>
+        <figcaption class="pin-legend" id="pinLegend">1 — Roof & shade scan</figcaption>
+      </figure>
+      <div id="pinCopy">
+        <article class="card">
+          <h3>Roof & shade scan</h3>
+          <p class="muted">We model your roof, orientation, and seasonal shade to simulate 12‑month output.</p>
+        </article>
+        <article class="card">
+          <h3>Panel layout & install</h3>
+          <p class="muted">Low‑profile tiles interlock with your shingles for better wind/water performance and a clean finish.</p>
+        </article>
+        <article class="card">
+          <h3>Activation & monitoring</h3>
+          <p class="muted">Go live in a day. Track real‑time production and savings in your dashboard.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- RSVP -->
-  <section id="rsvp" class="panel">
+  <!-- TECHNOLOGY / BENEFITS with counters -->
+  <section class="panel" id="tech">
+    <div class="container head">
+      <h2>Why homeowners switch</h2>
+      <p class="muted">High‑efficiency cells, invisible wiring, better warranty.</p>
+    </div>
+    <div class="container cards">
+      <article class="card">
+        <h3>High‑efficiency cells</h3>
+        <p class="muted">N‑type monocrystalline cells deliver more energy with lower degradation.</p>
+      </article>
+      <article class="card">
+        <h3>Low‑profile design</h3>
+        <p class="muted">Panels sit closer to the roofway for reduced wind uplift and cleaner aesthetics.</p>
+      </article>
+      <article class="card">
+        <h3>Streamlined install</h3>
+        <p class="muted">Rapid mounting hardware and integrated wiring reduce time on site.</p>
+      </article>
+    </div>
+    <div class="container metrics" id="metrics">
+      <div class="metric"><div class="num" data-target="32">0%</div><div class="muted">Avg. bill reduction</div></div>
+      <div class="metric"><div class="num" data-target="25">0 yrs</div><div class="muted">Performance warranty</div></div>
+      <div class="metric"><div class="num" data-target="18">0 mo</div><div class="muted">Typical payback</div></div>
+      <div class="metric"><div class="num" data-target="45">0%</div><div class="muted">Tax credit + incentives*</div></div>
+    </div>
+    <div class="container muted" style="margin-top:6px; font-size:12px">*Varies by state; we’ll include local incentives in your quote.</div>
+  </section>
+
+  <!-- PROJECTS / GALLERY -->
+  <section class="panel" id="projects">
+    <div class="container head">
+      <h2>Recent installs</h2>
+      <p class="muted">Modern, craftsman, and colonial homes—systems sized to your goals.</p>
+    </div>
+    <div class="container gallery">
+      <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1400&auto=format&fit=crop" alt="Roof 1"/>
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop" alt="Roof 2"/>
+      <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1200&auto=format&fit=crop" alt="Roof 3"/>
+      <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop" alt="Roof 4"/>
+    </div>
+  </section>
+
+  <!-- QUOTE FORM (Netlify Forms ready) -->
+  <section class="panel" id="quote">
+    <div class="container head">
+      <h2>Get your free savings estimate</h2>
+      <p class="muted">Tell us a bit about your home—we’ll run the numbers and send a detailed plan.</p>
+    </div>
     <div class="container">
-      <div class="head reveal"><span class="burst">KAPOW!</span> <h2 style="display:inline-block;margin:0 10px">RSVP</h2>
-        <p>Let us know you’re joining the league! Capes encouraged.</p>
-      </div>
-      <form name="kids-rsvp" method="POST" data-netlify="true" class="reveal">
-        <input type="hidden" name="form-name" value="kids-rsvp" />
-        <label>Parent Name<input type="text" name="parent" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Number of Heroes<input type="number" name="count" min="1" value="1"></label>
-        <label>Message<textarea name="msg" rows="3"></textarea></label>
-        <button type="submit">RSVP</button>
+      <form name="solaria-quote" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="solaria-quote" />
+        <p style="display:none"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+        <label>Full name<input name="name" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>ZIP code<input name="zip" pattern="[0-9]{5}" required></label>
+        <label>Monthly electric bill<select name="bill"><option value="<100">Under $100</option><option>$100–$200</option><option>$200–$300</option><option>>$300</option></select></label>
+        <label>Roof type<select name="roof"><option>Asphalt shingle</option><option>Metal</option><option>Tile</option><option>Flat</option></select></label>
+        <label>Notes (optional)<textarea name="msg" rows="3"></textarea></label>
+        <button type="submit">Calculate my savings</button>
       </form>
     </div>
   </section>
 </main>
 
-<!-- MODAL (opens from gallery click) -->
-<div class="modal" id="modal">
-  <div class="box">
-    <h3 style="margin-top:0;font-family:'Bangers'">Hero Photo Booth</h3>
-    <p>Tap the gallery images to view them larger. Props and capes provided at the event!</p>
-    <p><a href="#" id="closeModal">Close</a></p>
-  </div>
-</div>
+<footer>© <span id="y"></span> Solaria Roof • All rights reserved</footer>
 
-<footer>© <span id="y"></span> Jayden’s Super Bash</footer>
-
+<!-- GSAP + ScrollTrigger + (optional) smooth scroll via Lenis -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/%40studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 <script>
   // Year
   document.getElementById('y').textContent = new Date().getFullYear();
 
-  // Scroll-trigger reveal
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
-  }, {threshold: .15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Smooth scrolling (Lenis)
+  const lenis = new Lenis({ smoothWheel:true, smoothTouch:false });
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf) } requestAnimationFrame(raf);
 
-  // Gallery click → open modal
-  const modal = document.getElementById('modal');
-  document.getElementById('closeModal').addEventListener('click',(e)=>{e.preventDefault(); modal.classList.remove('open')});
-  document.getElementById('gal').addEventListener('click',(e)=>{ if(e.target.tagName==='IMG'){ e.preventDefault(); modal.classList.add('open'); }});
-  modal.addEventListener('click',(e)=>{ if(e.target===modal) modal.classList.remove('open'); });
+  // GSAP setup
+  gsap.registerPlugin(ScrollTrigger);
 
-  // Confetti burst on CTA
-  const confettiBtn = document.getElementById('confettiBtn');
-  if(confettiBtn){confettiBtn.addEventListener('click',()=>{
-    const c=document.createElement('canvas'); Object.assign(c.style,{position:'fixed',inset:0,pointerEvents:'none',zIndex:9}); document.body.appendChild(c);
-    const ctx=c.getContext('2d'); let W,H; const P=[]; const colors=['#ff4757','#1e90ff','#2ed573','#ffa502','#9b59b6'];
-    const R=()=>{W=c.width=innerWidth; H=c.height=innerHeight}; R();
-    for(let i=0;i<160;i++){P.push({x:W/2,y:H/2,vx:(Math.random()-0.5)*7,vy:(Math.random()-0.5)*7-5,s:2+Math.random()*3,a:1,r:Math.random()*6.28,cr:colors[i%colors.length]});}
-    const T=()=>{ctx.clearRect(0,0,W,H); P.forEach(p=>{p.vy+=.1;p.x+=p.vx;p.y+=p.vy;p.a-=.01;p.r+=.1}); P.forEach(p=>{ctx.globalAlpha=Math.max(p.a,0);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.fillStyle=p.cr;ctx.fillRect(-p.s,-p.s,p.s*2,p.s*2);ctx.restore();}); if(P.some(p=>p.a>0&&p.y<H+40)) requestAnimationFrame(T); else c.remove();}; T();
-  });}
+  // HERO sun canvas (lightweight canvas rays)
+  const c = document.getElementById('sunCanvas');
+  const ctx = c.getContext('2d');
+  let W,H; function resize(){ W=c.width=innerWidth; H=c.height=innerHeight; } resize();
+  addEventListener('resize', resize);
+  let t=0; (function draw(){ ctx.clearRect(0,0,W,H); const cx=W*0.5, cy=H*0.3; const R=Math.min(W,H)*0.12;
+    const grad = ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+    grad.addColorStop(0,'#ffd36e'); grad.addColorStop(1,'#ff9f1a');
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.fillStyle=grad; ctx.fill();
+    for(let i=0;i<80;i++){ const a=(i/80)*Math.PI*2 + t*0.005; const r1=R+10, r2=R+ (i%2? 140:90);
+      const x1=cx+Math.cos(a)*r1, y1=cy+Math.sin(a)*r1; const x2=cx+Math.cos(a)*r2, y2=cy+Math.sin(a)*r2;
+      ctx.strokeStyle=`rgba(255,211,110,${0.12 + 0.08*Math.sin(i+t*0.01)})`; ctx.lineWidth=1.2; ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke(); }
+    t++; requestAnimationFrame(draw); })();
+
+  // PIN: keep the image fixed while the copy scrolls & update caption
+  const steps = [
+    {legend:'1 — Roof & shade scan', img:'https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop'},
+    {legend:'2 — Panel layout & install', img:'https://images.unsplash.com/photo-1584270354949-c26b0d5b4a0c?q=80&w=1600&auto=format&fit=crop'},
+    {legend:'3 — Activation & monitoring', img:'https://images.unsplash.com/photo-1602242893333-2a2722b20406?q=80&w=1600&auto=format&fit=crop'}
+  ];
+  const fig = document.getElementById('pinFigure');
+  const leg = document.getElementById('pinLegend');
+  const copyItems = Array.from(document.querySelectorAll('#pinCopy .card'));
+
+  ScrollTrigger.create({
+    trigger:'#how', start:'top top', end:'bottom bottom', pin:'#pinFigure', pinSpacing:false
+  });
+
+  copyItems.forEach((el, i)=>{
+    gsap.from(el, {opacity:0, y:20, duration:.6, ease:'power2.out', scrollTrigger:{trigger:el, start:'top 80%'}});
+    ScrollTrigger.create({
+      trigger:el, start:'top center', onEnter:()=>swap(i)
+    });
+  });
+  function swap(i){ leg.textContent = steps[i].legend; fig.querySelector('img').src = steps[i].img; }
+
+  // Metrics counters (animate numbers when visible)
+  const nums = document.querySelectorAll('.num');
+  nums.forEach(el=>{
+    const target = +el.getAttribute('data-target');
+    const unit = el.textContent.replace(/[0-9]/g,'');
+    ScrollTrigger.create({
+      trigger: el, start:'top 85%', once:true,
+      onEnter: ()=>{
+        gsap.fromTo(el, {textContent:0}, {
+          textContent: target, duration: 1.6, ease:'power1.out', roundProps: 'textContent',
+          onUpdate(){ el.innerHTML = Math.floor(el.textContent) + unit; }
+        });
+      }
+    });
+  });
+
+  // Reveal gallery tiles
+  gsap.utils.toArray('.gallery img').forEach((img, i)=>{
+    gsap.from(img, {opacity:0, y:20, duration:.5, delay:i*0.05, ease:'power2.out', scrollTrigger:{trigger:img, start:'top 90%'}})
+  });
 </script>
 </body>
 </html>
